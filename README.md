@@ -5,50 +5,54 @@ PronouncePro AI is a modern web application designed to help users improve their
 The platform leverages browser-based speech technologies to evaluate spoken words, provide instant feedback, and track user performance over time through detailed analytics and achievement-based learning.
 
 ---
+### Quick Start (Windows)
 
-## Overview
-
-Learning correct pronunciation is a major challenge for English learners. PronouncePro AI addresses this problem by providing an intuitive and engaging environment where users can practice words, receive immediate feedback, and monitor their improvement through personalized statistics and progress dashboards.
-
-The application combines speech recognition, pronunciation scoring, gamification, and modern UI/UX principles to create an effective learning experience.
+ Run Commands
+# Action	                          Command
+Launch Application               	Open index.html
+Enable Microphone	Browser          Permission
+Start Practice	                 Enter Word & Click Speak
 
 ---
 
-## Key Features
+### Core Technologies
+# Frontend
+HTML5
+CSS3
+JavaScript 
 
-### Authentication System
+# Browser APIs
+Web Speech Recognition API
+Speech Synthesis API
+Local Storage API
 
-* User Registration and Login
-* Email or Username-based Authentication
-* Password Strength Validation
-* Password Reset Functionality
-* Session Persistence using Local Storage
-* Google Sign-In Simulation
+# External Services
+Dictionary API (dictionaryapi.dev)
 
-### Pronunciation Practice
+# Analytics
+Chart.js
 
-* Practice pronunciation of custom English words
-* Browser-based Speech Recognition
-* Real-Time Pronunciation Evaluation
-* Instant Accuracy Scoring
-* Interactive Pronunciation Feedback
-* Letter-by-Letter Comparison Analysis
+ ---
+ 
+ ### Algorithms & Concepts
+ 
+# Pronunciation Evaluation
+* Levenshtein Distance Algorithm
+* String Similarity Scoring
+* Character-Level Comparison
+  
+# Speech Processing
+* Speech-to-Text Recognition
+* Text-to-Speech Synthesis
+* Pronunciation Guidance
+  
+# Learning Analytics
+* Average Score Calculation
+* Best Score Tracking
+* Streak Calculation
+* Badge Achievement Logic
 
-### Pronunciation Assistance
-
-* Audio Pronunciation Playback
-* Dictionary API Integration
-* Speech Synthesis Fallback Support
-* Simplified Pronunciation Guidance
-
-### Analytics Dashboard
-
-* Total Practice Sessions
-* Average Pronunciation Score
-* Best Performance Tracking
-* Daily Activity Monitoring
-* Learning Streak Calculation
-* Progress Visualization
+  ---
 
 ### Achievement System
 
@@ -62,40 +66,8 @@ Users unlock badges based on their learning performance:
 | ⚡ Consistency Champion | 7-day practice streak   |
 | 🎯 Accuracy Expert     | 95%+ average accuracy   |
 
-###  Modern User Experience
 
-* Fully Responsive Design
-* Light & Dark Theme Support
-* Glassmorphism UI Components
-* Smooth Page Transitions
-* Animated Feedback System
-* Toast Notifications
-* Interactive Learning Interface
 
----
-
-## Technology Stack
-
-### Frontend
-
-* HTML5
-* CSS3
-* JavaScript 
-
-### Browser APIs
-
-* Web Speech Recognition API
-* Speech Synthesis API
-* Local Storage API
-
-### External Services
-
-* Dictionary API (dictionaryapi.dev)
-* Google Fonts
-
-### Visualization
-
-* Chart.js
 ---
 
 ##  How It Works
