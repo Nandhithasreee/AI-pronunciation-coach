@@ -1,76 +1,83 @@
-# PronouncePro AI ->  AI-Powered English Pronunciation Learning Platform
+# PronouncePro AI
 
 PronouncePro AI is a modern web application designed to help users improve their English pronunciation through real-time speech recognition, pronunciation analysis, progress tracking, and interactive learning experiences.
 
 The platform leverages browser-based speech technologies to evaluate spoken words, provide instant feedback, and track user performance over time through detailed analytics and achievement-based learning.
 
 ---
-### Quick Start (Windows)
 
- Run Commands
-# Action	                          Command
-Launch Application               	Open index.html
-Enable Microphone	Browser          Permission
-Start Practice	                 Enter Word & Click Speak
+## Quick Start (Windows)
+
+| Action | Command / Steps |
+| --- | --- |
+| **Launch Application** | Open `index.html` |
+| **Enable Microphone** | Grant browser permission when prompted |
+| **Start Practice** | Enter Word & Click **Speak** |
 
 ---
 
-### Core Technologies
-# Frontend
-HTML5
-CSS3
-JavaScript 
+## Core Technologies
 
-# Browser APIs
-Web Speech Recognition API
-Speech Synthesis API
-Local Storage API
+### Frontend
 
-# External Services
-Dictionary API (dictionaryapi.dev)
+* HTML5
+* CSS3
+* JavaScript
 
-# Analytics
-Chart.js
+### Browser APIs
 
- ---
- 
- ### Algorithms & Concepts
- 
-# Pronunciation Evaluation
+* Web Speech Recognition API
+* Speech Synthesis API
+* Local Storage API
+
+### External Services
+
+* Dictionary API (`dictionaryapi.dev`)
+
+### Analytics
+
+* Chart.js
+
+---
+
+## Algorithms & Concepts
+
+### Pronunciation Evaluation
+
 * Levenshtein Distance Algorithm
 * String Similarity Scoring
 * Character-Level Comparison
-  
-# Speech Processing
+
+### Speech Processing
+
 * Speech-to-Text Recognition
 * Text-to-Speech Synthesis
 * Pronunciation Guidance
-  
-# Learning Analytics
+
+### Learning Analytics
+
 * Average Score Calculation
 * Best Score Tracking
 * Streak Calculation
 * Badge Achievement Logic
 
-  ---
+---
 
-### Achievement System
+## Achievement System
 
 Users unlock badges based on their learning performance:
 
-| Badge                  | Requirement             |
-| ---------------------- | ----------------------- |
-| 🥉 Bronze Speaker      | 50 successful attempts  |
-| 🥈 Silver Speaker      | 200 successful attempts |
-| 🥇 Gold Speaker        | 500 successful attempts |
-| ⚡ Consistency Champion | 7-day practice streak   |
-| 🎯 Accuracy Expert     | 95%+ average accuracy   |
-
-
+| Badge | Requirement |
+| --- | --- |
+| 🥉 **Bronze Speaker** | 50 successful attempts |
+| 🥈 **Silver Speaker** | 200 successful attempts |
+| 🥇 **Gold Speaker** | 500 successful attempts |
+| ⚡ **Consistency Champion** | 7-day practice streak |
+| 🎯 **Accuracy Expert** | 95%+ average accuracy |
 
 ---
 
-##  How It Works
+## How It Works
 
 1. User creates an account or signs in.
 2. A word is entered for pronunciation practice.
@@ -84,24 +91,24 @@ Users unlock badges based on their learning performance:
 
 ---
 
-##  Pronunciation Evaluation
+## Pronunciation Evaluation
 
 The application uses a similarity-based scoring mechanism to compare the expected word against the recognized spoken word.
 
 ### Feedback Categories
 
-| Score    | Result                     |
-| -------- | -------------------------- |
-| 95–100   | Excellent Pronunciation 🎉 |
-| 80–94    | Good Pronunciation 👍      |
-| 60–79    | Needs Improvement 💪       |
-| Below 60 | Practice Again 🔁          |
+| Score | Result |
+| --- | --- |
+| **95–100** | Excellent Pronunciation 🎉 |
+| **80–94** | Good Pronunciation 👍 |
+| **60–79** | Needs Improvement 💪 |
+| **Below 60** | Practice Again 🔁 |
 
 ---
 
-##  Data Management
+## Data Management
 
-Currently, the application stores data locally within the browser using Local Storage.
+Currently, the application stores data locally within the browser using Local Storage. No external database or backend server is required.
 
 Stored information includes:
 
@@ -112,11 +119,9 @@ Stored information includes:
 * Theme Preferences
 * Dashboard Statistics
 
-No external database or backend server is required.
-
 ---
 
-##  Theme Support
+## Theme Support
 
 PronouncePro AI includes built-in theme switching functionality:
 
@@ -124,5 +129,3 @@ PronouncePro AI includes built-in theme switching functionality:
 * 🌙 Dark Mode
 
 User preferences are automatically preserved between sessions.
-
----
