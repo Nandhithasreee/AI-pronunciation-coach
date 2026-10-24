@@ -510,7 +510,8 @@ async function fetchPronunciation(word) {
             // No dictionary audio: use browser speech synthesis.
             pa.pause();
             pa.removeAttribute('src');
-            pa.style.display = 'none';
+            // pa.style.display = 'none';
+            pa.style.display = 'block';
             await speak(word);
         }
     } catch (error) {
