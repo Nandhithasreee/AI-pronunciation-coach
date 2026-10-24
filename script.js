@@ -449,29 +449,78 @@ function speak(text) {
 }
 
 // ===== DICTIONARY API =====
-async function fetchPronunciation(word) {
-  try {
-    const res  = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
-    if (!res.ok) throw new Error();
-    const data = await res.json();
-    let audioUrl = '';
-    for (const entry of data)
-      for (const ph of entry.phonetics || [])
-        if (ph.audio) { audioUrl = ph.audio; break; }
+// async function fetchPronunciation(word) {
+//   try {
+//     const res  = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+//     if (!res.ok) throw new Error();
+//     const data = await res.json();
+//     let audioUrl = '';
+//     for (const entry of data)
+//       for (const ph of entry.phonetics || [])
+//         if (ph.audio) { audioUrl = ph.audio; break; }
 
+//     const pa = document.getElementById('practiceAudio');
+//     if (audioUrl) {
+//       pa.src = audioUrl; pa.style.display = 'block';
+//       await pa.play().catch(() => {});
+//     } else {
+//       pa.style.display = 'none';
+//       await speak(word);
+//     }
+//   } catch (e) {
+//     document.getElementById('practiceAudio').style.display = 'none';
+//     await speak(word);
+//   }
+// }
+
+
+async function fetchPronunciation(word) {
     const pa = document.getElementById('practiceAudio');
-    if (audioUrl) {
-      pa.src = audioUrl; pa.style.display = 'block';
-      await pa.play().catch(() => {});
-    } else {
-      pa.style.display = 'none';
-      await speak(word);
+
+    try {
+        const res = await fetch(
+            `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`
+        );
+
+        if (!res.ok) throw new Error('Pronunciation audio unavailable');
+
+        const data = await res.json();
+        let audioUrl = '';
+
+        for (const entry of data) {
+            const phonetic = (entry.phonetics || []).find(
+                ph => ph.audio && ph.audio.trim()
+            );
+
+            if (phonetic) {
+                audioUrl = phonetic.audio;
+                break;
+            }
+        }
+
+        if (audioUrl) {
+            pa.pause();
+            pa.src = audioUrl;
+            pa.style.display = 'block';
+            pa.load();
+
+            // Show the player even if autoplay is blocked.
+            pa.play().catch(() => {});
+        } else {
+            // No dictionary audio: use browser speech synthesis.
+            pa.pause();
+            pa.removeAttribute('src');
+            pa.style.display = 'none';
+            await speak(word);
+        }
+    } catch (error) {
+        pa.pause();
+        pa.removeAttribute('src');
+        pa.style.display = 'none';
+        await speak(word);
     }
-  } catch (e) {
-    document.getElementById('practiceAudio').style.display = 'none';
-    await speak(word);
-  }
 }
+
 
 // ===== SPEECH RECOGNITION =====
 const SPEAK_BTN_INNER =
